@@ -13,16 +13,20 @@ import Messages from "../../assets/messages.png";
 import Tutorials from "../../assets/tutorials.png";
 import Courses from "../../assets/courses.png";
 import Funds from "../../assets/funds.png";
+import { AuthContext } from "../../contextapi/AuthContext";
+import { useContext } from "react";
 
 
 export default function Leftbar() {
+  const {currentUser} = useContext(AuthContext)
+
   return (
     <div className="leftbar">
       <div className="container">
         <div className="menu">
           <div className="user">
-            <img src="https://images.pexels.com/photos/4004374/pexels-photo-4004374.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="user" />
-            <span>Saiful Islam</span>
+            <img src={currentUser.profilePic} alt="user" />
+            <span>{currentUser.name}</span>
           </div>
           <div className="item">
             <img src={Friends} alt="" />

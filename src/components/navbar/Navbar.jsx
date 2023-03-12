@@ -8,8 +8,15 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import { useContext } from "react";
+import { DarkmodeContext } from "../../contextapi/DarkmodeContext";
+import { AuthContext } from "../../contextapi/AuthContext";
 
 export default function Navbar() {
+
+  const {toggle, darkMode} = useContext(DarkmodeContext)
+  const {currentUser} = useContext(AuthContext)
+
   return (
     <div className="navbar">
       <div className="left">
@@ -17,8 +24,7 @@ export default function Navbar() {
         <span>My Social</span>
         </Link>
         <HomeOutlinedIcon />
-        <WbSunnyOutlinedIcon />
-        <DarkModeOutlinedIcon />
+        {darkMode ? <WbSunnyOutlinedIcon onClick={toggle} /> :  <DarkModeOutlinedIcon onClick={toggle} />}
         <GridViewOutlinedIcon />
         <div className="search">
           <SearchOutlinedIcon />
@@ -31,8 +37,8 @@ export default function Navbar() {
         <EmailOutlinedIcon />
         <NotificationsOutlinedIcon />
         <div className="user">
-          <img src="https://images.pexels.com/photos/4004374/pexels-photo-4004374.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="userimage" />
-          <span>Saiful Islam</span>
+          <img src={currentUser.profilePic} alt="userimage" />
+          <span>{currentUser.name}</span>
         </div>
       </div>
     </div>
