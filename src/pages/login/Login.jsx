@@ -1,25 +1,24 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../contextapi/AuthContext";
-import "./login.scss"
+import { AuthContext } from "../../context/AuthContext";
+import "./login.scss";
 
-function Login() {
+const Login = () => {
+  const { login } = useContext(AuthContext);
 
-  const {login} = useContext(AuthContext)
-
-  const handleLogin = ()=>{
-    login()
-  }
+  const handleLogin = () => {
+    login();
+  };
 
   return (
     <div className="login">
       <div className="card">
         <div className="left">
-          <h1>Hello World</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio cumque aut suscipit laborum voluptas voluptate.</p>
-          <span>Don't have an account?</span>
+          <h1>Hello World.</h1>
+          <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
+          <span>Don't you have an account?</span>
           <Link to="/register">
-          <button>Register</button>
+            <button>Register</button>
           </Link>
         </div>
         <div className="right">
@@ -32,7 +31,7 @@ function Login() {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

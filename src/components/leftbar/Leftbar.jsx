@@ -1,31 +1,33 @@
-import "./leftbar.scss"
-
-import Friends from "../../assets/friends.png";
-import Groups from "../../assets/groups.png";
-import Market from "../../assets/market.png";
-import Watch from "../../assets/watch.png";
-import Memories from "../../assets/memories.png";
-import Events from "../../assets/events.png";
-import Gaming from "../../assets/gaming.png";
-import Gallery from "../../assets/gallery.png";
-import Videos from "../../assets/videos.png";
-import Messages from "../../assets/messages.png";
-import Tutorials from "../../assets/tutorials.png";
-import Courses from "../../assets/courses.png";
-import Funds from "../../assets/funds.png";
-import { AuthContext } from "../../contextapi/AuthContext";
+import "./leftbar.scss";
+import Friends from "../../assets/1.png";
+import Groups from "../../assets/2.png";
+import Market from "../../assets/3.png";
+import Watch from "../../assets/4.png";
+import Memories from "../../assets/5.png";
+import Events from "../../assets/6.png";
+import Gaming from "../../assets/7.png";
+import Gallery from "../../assets/8.png";
+import Videos from "../../assets/9.png";
+import Messages from "../../assets/10.png";
+import Tutorials from "../../assets/11.png";
+import Courses from "../../assets/12.png";
+import Fund from "../../assets/13.png";
+import { AuthContext } from "../../context/AuthContext";
 import { useContext } from "react";
 
+const Leftbar = () => {
 
-export default function Leftbar() {
-  const {currentUser} = useContext(AuthContext)
+  const { currentUser } = useContext(AuthContext);
 
   return (
-    <div className="leftbar">
+    <div className="leftBar">
       <div className="container">
         <div className="menu">
           <div className="user">
-            <img src={currentUser.profilePic} alt="user" />
+            <img
+              src={currentUser.profilePic}
+              alt=""
+            />
             <span>{currentUser.name}</span>
           </div>
           <div className="item">
@@ -77,7 +79,7 @@ export default function Leftbar() {
         <div className="menu">
           <span>Others</span>
           <div className="item">
-            <img src={Funds} alt="" />
+            <img src={Fund} alt="" />
             <span>Fundraiser</span>
           </div>
           <div className="item">
@@ -91,5 +93,7 @@ export default function Leftbar() {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
+
+export default Leftbar;
