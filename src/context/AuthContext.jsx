@@ -11,7 +11,7 @@ export const AuthContextProvider = ({ children }) => {
     //TO DO
     setCurrentUser({
       id: 1,
-      name: "John Doe",
+      name: "Saiful Islam",
       profilePic:
         "https://images.pexels.com/photos/1590549/pexels-photo-1590549.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     });
